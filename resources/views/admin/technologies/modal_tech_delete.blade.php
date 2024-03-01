@@ -1,7 +1,7 @@
 
   
   <!-- Modal -->
-  <div class="modal fade" id="modal_technology_delete-{{ $technology->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal_technology_delete-{{ $technologies->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -10,12 +10,12 @@
           </div>
   
           <div class="modal-body">
-              <h4>Sei sicuro di volere eliminare la tech "{{ $technology->name }}"?</h4>
+              <h4>Sei sicuro di volere eliminare la tech "{{ $technologies->name }}"?</h4>
           </div>
   
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-              <form id="form_delete" action="{{ route("admin.technologies.destroy", ["technology" => $technology->id] )}}" method="post"> 
+              <form id="form_delete" action="{{ route("admin.technologies.destroy", ["technology" => $technologies->id] )}}" method="post"> 
                   @csrf
                   @method("DELETE")
               <button type="submit" class="btn bg-red btn-sm btn-square" >  Elimina</button>

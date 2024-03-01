@@ -25,18 +25,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                          @foreach($technologies as $technology)
+                          @foreach($technology as $technologies)
                             <tr>
-                                <td>{{ $technology->id}}</td>
-                                <td>{{ $technology->name}}</td>
-                                <td>{{ $technology->slug}}</td>
-                                <td>{{ count($technology->projects) }}</td> 
+                                <td>{{ $technologies->id}}</td>
+                                <td>{{ $technologies->name}}</td>
+                                <td>{{ $technologies->slug}}</td>
+                                <td>{{ count($technologies->projects) }}</td> 
                                 <td>
-                                    <a href="{{ route("admin.technologies.show", ["technology" => $technology->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>
-                                    <a href="{{ route("admin.technologies.edit", ["technology" => $technology->id])}}" class="btn btn-sm btn-square btn-warning"><i class=" fa-solid fa-edit"></i></a>
+                                    <a href="{{ route("admin.technologies.show", ["technology" => $technologies->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>
+                                    <a href="{{ route("admin.technologies.edit", ["technology" => $technologies->id])}}" class="btn btn-sm btn-square btn-warning"><i class=" fa-solid fa-edit"></i></a>
                                     <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
-                                        data-bs-target="#modal_technology_delete-{{ $technology->id }}" 
-                                        data-id= "{{ $technology->id }}" data-name="{{ $technology->name }}"  data-technology="technologies">Elimina
+                                        data-bs-target="#modal_technology_delete-{{ $technologies->id }}" 
+                                        data-id= "{{ $technologies->id }}" data-name="{{ $technologies->name }}"  data-technology="technologies">Elimina
                                     </button>
                                      @include("admin.technologies.modal_tech_delete") 
                                 </td>
