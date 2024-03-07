@@ -21,15 +21,14 @@ class ProjectController extends Controller
 
     public function show($id)
     {
-        $car = Car::with(["type", "technology"])->find($id);
-
-        if (!$car) {
-            return response()->json(['error' => 'Auto non trovata'], 404);
+        $projects = Project::with(["type", "technology"])->find($id);
+        if (!$projects) {
+            return response()->json(['error' => 'Progetto non trovata'], 404);
         }
 
         return response()->json([
             'success' => true,
-            'car' => $car
+            'results' => $projects
         ]);
     }
 }
