@@ -55,7 +55,9 @@
                 <label class="mt-3" for="technology_id">Seleziona tecnologia</label>
                 <div>
                     @foreach($technologies as $technology)
-                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}">
+                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}" 
+                       {{--  {{ $project->technologies->id == old($technology->id) ? "checked" : "" }} --}}>
+                        
                         <label for="" class="form-check-label" >  {{ $technology->name }}</label>
                     @endforeach
                 </div>

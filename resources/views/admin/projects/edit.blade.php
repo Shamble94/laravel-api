@@ -70,7 +70,7 @@
 
                     @else
                     <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}" 
-                    {{ $project->technologies->contains($technology->id) ? "checked" : "" }}>
+                     {{ $project->technology->contains($technology->id) ? "checked" : "" }} >
                     @endif
                     <label for="" class="form-checklabel">  {{ $technology->name}}</label>
                 </div>

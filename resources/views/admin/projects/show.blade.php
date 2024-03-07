@@ -14,7 +14,7 @@
             @endif
             <p class="my-2">
                 <h4>Tech utilizzata/e:</h4>
-                @forelse($project->technologies as $technology)
+                @forelse($project->technology as $technology)
                 #{{ $technology->name }}
                 @empty
                     Nessuna tech selezionata per questo progetto

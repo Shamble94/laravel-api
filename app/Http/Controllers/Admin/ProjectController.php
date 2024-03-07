@@ -68,7 +68,7 @@ class ProjectController extends Controller
 
         if($request->has("technologies")){
 
-            $project->technologies()->attach($form_data["technologies"]);
+            $project->technology()->attach($form_data["technologies"]);
         }
         
         return redirect()->route("admin.projects.index");
@@ -142,7 +142,7 @@ class ProjectController extends Controller
 
         if($request->has("technologies")){
 
-            $project->technologies()->sync($form_data["technologies"]);
+            $project->technology()->sync($form_data["technologies"]);
         }
         else
         {
